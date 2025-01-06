@@ -1,0 +1,1 @@
+# Java skeleton for IntelliJ
