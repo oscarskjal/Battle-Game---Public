@@ -20,7 +20,7 @@ public class Main {
 
 
             if (monster.getHp() <= 0) {
-                System.out.println(monster.getName() + " has been defeated!");
+                System.out.println(monster.getName() + " has been defeated! You win!");
                 break;
             }
 
@@ -30,7 +30,7 @@ public class Main {
 
 
             if (player1.getHp() <= 0) {
-                System.out.println(player1.getName() + " has been defeated!");
+                System.out.println(player1.getName() + " has been defeated! You Lose!");
                 break;
             }
         }
