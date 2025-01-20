@@ -1,4 +1,7 @@
-package PACKAGE_NAME;
+public class Player extends GameCharacter{
 
-public class Player {
+
+    public Player(int damage, int hp, String name) {
+        super(damage, hp, name);
+    }
 }

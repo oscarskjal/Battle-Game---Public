@@ -1,8 +1,9 @@
-public class GameCharacter {
+public abstract class GameCharacter {
 
     private int damage;
     private int hp;
     private String name;
+    Weapon Equippedweapon;
 
 
     public GameCharacter(int damage, int hp, String name) {

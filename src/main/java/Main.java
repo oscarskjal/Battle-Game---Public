@@ -4,8 +4,8 @@ public class Main {
         System.out.println("Let the battle begin!");
 
 
-        GameCharacter player1 = new GameCharacter(10, 100, "Player1");
-        GameCharacter monster = new GameCharacter(15, 50, "Monster");
+        Player player1 = new Player(10, 100, "Player1");
+        Npc monster = new Npc(15, 50, "Monster");
 
 
         for (int round = 1; player1.getHp() > 0 && monster.getHp() > 0; round++) {
