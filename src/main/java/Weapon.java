@@ -1,16 +1,24 @@
-public class Weapon {
+
+public class Weapon  {
 
     private String name;
-    private String damage;
+    private int damage;
 
 
 
 
-    public Weapon( String name, String damage ) {
+    public Weapon() {
+
+        this.name = "{Spoon}";
+        this.damage = 5;
+    }
+
+    public Weapon( String name, int damage ) {
 
         this.name = name;
         this.damage = damage;
     }
+
 
     public String getName() {
         return name;
@@ -20,11 +28,11 @@ public class Weapon {
         this.name = name;
     }
 
-    public String getDamage() {
+    public int getDamage() {
         return damage;
     }
 
-    public void setDamage(String damage) {
+    public void setDamage(int damage) {
         this.damage = damage;
     }
 }

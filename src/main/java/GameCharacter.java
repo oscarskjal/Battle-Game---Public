@@ -12,9 +12,22 @@ public abstract class GameCharacter {
         this.name = name;
     }
 
+    public GameCharacter(int hp, String name, Weapon Equippedweapon) {
+        this.hp = hp;
+        this.name = name;
+        this.Equippedweapon = Equippedweapon;
+    }
 
     public String getName() {
         return name;
+    }
+
+    public Weapon getEquippedweapon() {
+        return Equippedweapon;
+    }
+
+    public void setEquippedweapon(Weapon equippedweapon) {
+        Equippedweapon = equippedweapon;
     }
 
     public void setName(String name) {
@@ -37,11 +50,20 @@ public abstract class GameCharacter {
         this.hp = hp;
     }
 
-
     public void takeDamage(int damage) {
         this.hp -= damage;
         if (this.hp < 0) {
             this.hp = 0;
+        }
+    }
+
+    public void attack(GameCharacter defender) {
+        if (this.Equippedweapon != null) {
+            int weaponDamage = this.Equippedweapon.getDamage();
+            System.out.println(this.name + " attacks " + defender.getName() + " with " + this.Equippedweapon.getName() + " for " + weaponDamage + " damage.");
+            defender.takeDamage(weaponDamage);
+        } else {
+            System.out.println(this.name + " No weapon equipped.");
         }
     }
 }
