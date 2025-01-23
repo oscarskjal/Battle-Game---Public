@@ -1,10 +1,13 @@
+
+import java.util.Random;
+
 public abstract class GameCharacter {
 
     private int damage;
     private int hp;
     private String name;
-    Weapon Equippedweapon;
-
+    private Weapon equippedWeapon;
+    private double dexterity;
 
     public GameCharacter(int damage, int hp, String name) {
         this.damage = damage;
@@ -12,22 +15,23 @@ public abstract class GameCharacter {
         this.name = name;
     }
 
-    public GameCharacter(int hp, String name, Weapon Equippedweapon) {
+    public GameCharacter(int hp, String name, Weapon equippedWeapon, double dexterity) {
         this.hp = hp;
         this.name = name;
-        this.Equippedweapon = Equippedweapon;
+        this.equippedWeapon = equippedWeapon;
+        this.dexterity = dexterity;
     }
 
     public String getName() {
         return name;
     }
 
-    public Weapon getEquippedweapon() {
-        return Equippedweapon;
+    public Weapon getEquippedWeapon() {
+        return equippedWeapon;
     }
 
-    public void setEquippedweapon(Weapon equippedweapon) {
-        Equippedweapon = equippedweapon;
+    public void setEquippedWeapon(Weapon equippedWeapon) {
+        this.equippedWeapon = equippedWeapon;
     }
 
     public void setName(String name) {
@@ -50,6 +54,14 @@ public abstract class GameCharacter {
         this.hp = hp;
     }
 
+    public double getDexterity() {
+        return dexterity;
+    }
+
+    public void setDexterity(double dexterity) {
+        this.dexterity = dexterity;
+    }
+
     public void takeDamage(int damage) {
         this.hp -= damage;
         if (this.hp < 0) {
@@ -57,13 +69,21 @@ public abstract class GameCharacter {
         }
     }
 
+
     public void attack(GameCharacter defender) {
-        if (this.Equippedweapon != null) {
-            int weaponDamage = this.Equippedweapon.getDamage();
-            System.out.println(this.name + " attacks " + defender.getName() + " with " + this.Equippedweapon.getName() + " for " + weaponDamage + " damage.");
-            defender.takeDamage(weaponDamage);
+        if (this.equippedWeapon != null) {
+            int weaponDamage = this.equippedWeapon.getDamage();
+            double minDamage = weaponDamage * dexterity;
+            double maxDamage = weaponDamage;
+
+            Random random = new Random();
+            int actualDamage = (int) (minDamage + random.nextDouble() * (maxDamage - minDamage));
+
+            System.out.println(this.name + " attacks " + defender.getName() + " with " + this.equippedWeapon.getName()
+                    + " for " + actualDamage + " damage.");
+            defender.takeDamage(actualDamage);
         } else {
-            System.out.println(this.name + " No weapon equipped.");
+            System.out.println(this.name + " has no weapon equipped and cannot attack!");
         }
     }
 }
