@@ -6,7 +6,7 @@ public abstract class GameCharacter {
     private int hp;
     private String name;
     private Weapon equippedWeapon;
-    private double dexterity;
+    public double dexterity;
 
     public GameCharacter(int damage, int hp, String name) {
         this.damage = damage;
