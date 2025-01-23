@@ -1,4 +1,3 @@
-
 import java.util.Random;
 
 public abstract class GameCharacter {
@@ -69,7 +68,6 @@ public abstract class GameCharacter {
         }
     }
 
-
     public void attack(GameCharacter defender) {
         if (this.equippedWeapon != null) {
             int weaponDamage = this.equippedWeapon.getDamage();
@@ -83,7 +81,10 @@ public abstract class GameCharacter {
                     + " for " + actualDamage + " damage.");
             defender.takeDamage(actualDamage);
         } else {
-            System.out.println(this.name + " has no weapon equipped and cannot attack!");
+            int spoonDamage = 5;
+            System.out.println(this.name + " has no weapon equipped and attacks " + defender.getName() + " with a spoon for "
+                    + spoonDamage + " damage.");
+            defender.takeDamage(spoonDamage);
         }
     }
 }

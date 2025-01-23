@@ -15,7 +15,7 @@ public class Main {
         Weapon enemyWeapon = new Weapon("Hammer", 15);
 
 
-        GameCharacter player1 = new Player(100, playerName, sword, 0.8);
+        GameCharacter player1 = new Player(100, playerName, null, 0.8);
 
         boolean continueGame = true;
 
