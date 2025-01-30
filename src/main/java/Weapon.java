@@ -1,24 +1,19 @@
+import java.util.ArrayList;
 
-public class Weapon  {
+public class Weapon {
 
     private String name;
     private int damage;
 
-
-
-
     public Weapon() {
-
-        this.name = "{Spoon}";
+        this.name = "Spoon";
         this.damage = 5;
     }
 
-    public Weapon( String name, int damage ) {
-
+    public Weapon(String name, int damage) {
         this.name = name;
         this.damage = damage;
     }
-
 
     public String getName() {
         return name;
@@ -35,4 +30,6 @@ public class Weapon  {
     public void setDamage(int damage) {
         this.damage = damage;
     }
+
+
 }

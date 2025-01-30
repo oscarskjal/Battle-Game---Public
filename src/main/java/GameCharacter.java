@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class GameCharacter {
@@ -7,11 +8,13 @@ public abstract class GameCharacter {
     private String name;
     private Weapon equippedWeapon;
     public double dexterity;
+    private ArrayList<Weapon> inventory;
 
     public GameCharacter(int damage, int hp, String name) {
         this.damage = damage;
         this.hp = hp;
         this.name = name;
+        this.inventory = new ArrayList<>();
     }
 
     public GameCharacter(int hp, String name, Weapon equippedWeapon, double dexterity) {
@@ -19,6 +22,7 @@ public abstract class GameCharacter {
         this.name = name;
         this.equippedWeapon = equippedWeapon;
         this.dexterity = dexterity;
+        this.inventory = new ArrayList<>();
     }
 
     public String getName() {
@@ -86,5 +90,13 @@ public abstract class GameCharacter {
                     + spoonDamage + " damage.");
             defender.takeDamage(spoonDamage);
         }
+    }
+
+    public ArrayList<Weapon> getInventory() {
+        return inventory;
+    }
+
+    public void addWeaponToInventory(Weapon weapon) {
+        inventory.add(weapon);
     }
 }
