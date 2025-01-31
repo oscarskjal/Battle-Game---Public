@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Random;
 
-public class Npc extends GameCharacter {
+public class Npc extends GameCharacter implements Serializable {
 
     private static final Weapon[] WEAPONS_LIST = {
             new Weapon("IronSword", 15),
