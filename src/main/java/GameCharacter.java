@@ -65,6 +65,10 @@ public abstract class GameCharacter {
         this.dexterity = dexterity;
     }
 
+    public Weapon getWeapon() {
+        return this.getEquippedWeapon();
+    }
+
     public void takeDamage(int damage) {
         this.hp -= damage;
         if (this.hp < 0) {
