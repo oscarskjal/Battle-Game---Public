@@ -20,7 +20,7 @@ public class SaveGameTest {
         // Spara Player objekt i en fil
         saveGame(originalPlayer, potionInventory, totalRounds);
 
-        // Läs player objekten från en fil
+        // Las player objekten fran en fil
         Object[] loadedData = loadGame();
         Player loadedPlayer = (Player) loadedData[0];
 

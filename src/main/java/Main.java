@@ -76,11 +76,11 @@ public class Main {
                     if (choice == 2) {
                         System.out.println("Saving game...");
                         saveGame(player1, potionInventory, totalRounds);
-                        validChoice = true;
+
                     } else if (choice == 3) {
                         System.out.println("Quitting...");
                         continueGame = false;
-                        validChoice = true;
+
                         break;
                     } else if (choice == 4) {
                         if (player1.getInventory().isEmpty()) {
@@ -127,11 +127,11 @@ public class Main {
                             }
 
                             if (random.nextInt(100) < 20) {
-                                Potion droppedPotion = new Potion(30); // kan ändras senare
+                                Potion droppedPotion = new Potion(30); // kan andras senare
                                 potionInventory.add(droppedPotion);
                                 System.out.println("The monster dropped a potion! You now have " + potionInventory.size() + " potions.");
                             }
-                            validChoice = true;
+
                             break;
                         }
                         validChoice = true;
