@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public abstract class GameCharacter {
+public abstract class GameCharacter implements Serializable {
 
     private int damage;
     private int hp;

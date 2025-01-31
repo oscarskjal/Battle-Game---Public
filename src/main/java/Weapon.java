@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Weapon {
+public class Weapon implements Serializable {
 
     private String name;
     private int damage;

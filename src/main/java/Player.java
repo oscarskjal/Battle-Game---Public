@@ -20,4 +20,5 @@ public class Player extends GameCharacter implements Serializable {
         System.out.println(this.getName() + " used a potion and healed " + healingAmount + " HP!");
         return this.getHp();
     }
+
 }

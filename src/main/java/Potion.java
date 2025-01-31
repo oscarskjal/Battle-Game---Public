@@ -1,4 +1,6 @@
-public class Potion {
+import java.io.Serializable;
+
+public class Potion implements Serializable {
     private int healingAmount = 50;
 
     public Potion(int healingAmount) {
