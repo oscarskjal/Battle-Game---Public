@@ -9,7 +9,8 @@ public class Npc extends GameCharacter implements Serializable {
             new Weapon("Mace", 10),
             new Weapon("Knife", 6),
             new Weapon("Whip", 5),
-            new Weapon("Club", 8)
+            new Weapon("Club", 8),
+            new Weapon("Flamesword",25)
     };
 
     private static final String[] MONSTER_NAMES = {"Witch", "Golem", "Zombie", "Undead", "Skeleton", "Tribesman"};
