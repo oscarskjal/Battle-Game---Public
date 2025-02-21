@@ -105,7 +105,7 @@ public class Main {
                         if (potionInventory.isEmpty()) {
                             System.out.println("You have no potions!");
                         } else {
-                            Potion potion = potionInventory.removeFirst();
+                            Potion potion = potionInventory.remove(0);
                             player1.usePotion(potion);
                             System.out.println("You used a potion! Potions left: " + potionInventory.size());
                         }
